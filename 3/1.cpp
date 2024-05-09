@@ -13,9 +13,9 @@ using namespace std;
 #define all(c) (c).begin(), (c).end()
 
 #ifdef LOCAL
-	#define eprintf(...) fprintf(stderr, __VA_ARGS__)
+  #define eprintf(...) fprintf(stderr, __VA_ARGS__)
 #else
-	#define eprintf(...) static_cast<void>(0)
+  #define eprintf(...) static_cast<void>(0)
 #endif
 
 using ll = long long;
@@ -26,29 +26,29 @@ using vi = vector<int>;
 using pii = pair<int, int>;
 
 char fromCode(int c) {
-	if (c < 26)
-		return 'a' + c;
-	return 'A' + c - 26;
+  if (c < 26)
+    return 'a' + c;
+  return 'A' + c - 26;
 }
 
 int main() {
 #ifdef LOCAL
-	freopen("in", "r", stdin);
-	freopen("out", "w", stdout);
+  freopen("in", "r", stdin);
+  freopen("out", "w", stdout);
 #endif
-	cin.tie(0);
-	ios_base::sync_with_stdio(0);
-	
-	string s;
-	int ans = 0;
-	while (cin >> s) {
-		int n = sz(s);
-		forn (i, 52)
-			if (s.substr(0, n / 2).find(fromCode(i)) != string::npos 
-				&& s.substr(n / 2, n / 2).find(fromCode(i)) != string::npos)
-				ans += i + 1;
-	}
-	cout << ans << "\n";
-	
-	return 0;
+  cin.tie(0);
+  ios_base::sync_with_stdio(0);
+  
+  string s;
+  int ans = 0;
+  while (cin >> s) {
+    int n = sz(s);
+    forn (i, 52)
+      if (s.substr(0, n / 2).find(fromCode(i)) != string::npos 
+        && s.substr(n / 2, n / 2).find(fromCode(i)) != string::npos)
+        ans += i + 1;
+  }
+  cout << ans << "\n";
+  
+  return 0;
 }

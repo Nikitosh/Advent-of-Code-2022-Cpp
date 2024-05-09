@@ -13,9 +13,9 @@ using namespace std;
 #define all(c) (c).begin(), (c).end()
 
 #ifdef LOCAL
-	#define eprintf(...) fprintf(stderr, __VA_ARGS__)
+  #define eprintf(...) fprintf(stderr, __VA_ARGS__)
 #else
-	#define eprintf(...) static_cast<void>(0)
+  #define eprintf(...) static_cast<void>(0)
 #endif
 
 using ll = long long;
@@ -28,60 +28,60 @@ using pii = pair<int, int>;
 const int ALLOWED_SIZE = 40000000;
 
 vi parseInts(const string& s) {
-	int n = sz(s);
-	vi res;
-	forn (i, n) {
-		if (isdigit(s[i])) {
-			int j = i, x = 0;
-			while (j < n && isdigit(s[j])) {
-				x = 10 * x + s[j] - '0';
-				j++;
-			}
-			if (i != 0 && s[i - 1] == '-')
-				x *= -1;
-			res.pb(x);
-			i = j - 1;
-		}
-	}
-	return res;
+  int n = sz(s);
+  vi res;
+  forn (i, n) {
+    if (isdigit(s[i])) {
+      int j = i, x = 0;
+      while (j < n && isdigit(s[j])) {
+        x = 10 * x + s[j] - '0';
+        j++;
+      }
+      if (i != 0 && s[i - 1] == '-')
+        x *= -1;
+      res.pb(x);
+      i = j - 1;
+    }
+  }
+  return res;
 }
 
 int main() {
 #ifdef LOCAL
-	freopen("in", "r", stdin);
-	freopen("out", "w", stdout);
+  freopen("in", "r", stdin);
+  freopen("out", "w", stdout);
 #endif
-	cin.tie(0);
-	ios_base::sync_with_stdio(0);
-	
-	string s;
-	map<vector<string>, ll> m;
-	vector<string> path;
-	while(getline(cin, s)) {
-		if (s[0] == '$' && s[2] == 'c') {
-			s = s.substr(5, sz(s) - 5);
-			if (s == "..")
-				path.pop_back();
-			else
-				path.pb(s);
-		}
-		auto v = parseInts(s);
-		if (!v.empty()) {
-			vector<string> path2 = path;
-			while (!path2.empty()) {
-				m[path2] += v[0];
-				path2.pop_back();
-			}
-		}
-	}
-	ll total = 0;
-	for (const auto& np : m)
-		total = max(total, np.snd);
-	ll minSize = 1e9;
-	for (const auto& np : m)
-		if (total - np.snd <= ALLOWED_SIZE)
-			minSize = min(minSize, np.snd);
-	cout << minSize << "\n";
+  cin.tie(0);
+  ios_base::sync_with_stdio(0);
+  
+  string s;
+  map<vector<string>, ll> m;
+  vector<string> path;
+  while(getline(cin, s)) {
+    if (s[0] == '$' && s[2] == 'c') {
+      s = s.substr(5, sz(s) - 5);
+      if (s == "..")
+        path.pop_back();
+      else
+        path.pb(s);
+    }
+    auto v = parseInts(s);
+    if (!v.empty()) {
+      vector<string> path2 = path;
+      while (!path2.empty()) {
+        m[path2] += v[0];
+        path2.pop_back();
+      }
+    }
+  }
+  ll total = 0;
+  for (const auto& np : m)
+    total = max(total, np.snd);
+  ll minSize = 1e9;
+  for (const auto& np : m)
+    if (total - np.snd <= ALLOWED_SIZE)
+      minSize = min(minSize, np.snd);
+  cout << minSize << "\n";
 
-	return 0;
+  return 0;
 }

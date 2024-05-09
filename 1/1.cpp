@@ -13,9 +13,9 @@ using namespace std;
 #define all(c) (c).begin(), (c).end()
 
 #ifdef LOCAL
-	#define eprintf(...) fprintf(stderr, __VA_ARGS__)
+  #define eprintf(...) fprintf(stderr, __VA_ARGS__)
 #else
-	#define eprintf(...) static_cast<void>(0)
+  #define eprintf(...) static_cast<void>(0)
 #endif
 
 using ll = long long;
@@ -27,24 +27,24 @@ using pii = pair<int, int>;
 
 int main() {
 #ifdef LOCAL
-	freopen("in", "r", stdin);
-	freopen("out", "w", stdout);
+  freopen("in", "r", stdin);
+  freopen("out", "w", stdout);
 #endif
-	cin.tie(0);
-	ios_base::sync_with_stdio(0);
-	
-	string s;
-	int curSum = 0, maxx = 0;
-	vi v;
-	while (getline(cin, s)) {
-		if (s.empty()) {
-			maxx = max(maxx, curSum);
-			curSum = 0;
-		} else {
-			curSum += atoi(s.c_str());
-		}
-	}
-	cout << maxx << "\n";
-	
-	return 0;
+  cin.tie(0);
+  ios_base::sync_with_stdio(0);
+  
+  string s;
+  int curSum = 0, maxx = 0;
+  vi v;
+  while (getline(cin, s)) {
+    if (s.empty()) {
+      maxx = max(maxx, curSum);
+      curSum = 0;
+    } else {
+      curSum += atoi(s.c_str());
+    }
+  }
+  cout << maxx << "\n";
+  
+  return 0;
 }
