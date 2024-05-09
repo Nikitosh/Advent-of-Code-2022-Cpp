@@ -69,7 +69,7 @@ int main() {
   int n = sz(a);
   forn (j, n) {
     int ind = (find(all(a), oldA[j]) - a.begin());
-    int dlt = oldA[j].fst % (n - 1);	
+    int dlt = oldA[j].fst % (n - 1);
     forn (i, abs(dlt)) {
       int nextInd = (ind + sgn(dlt) + n) % n;
       swap(a[ind], a[nextInd]);

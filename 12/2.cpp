@@ -53,7 +53,7 @@ int main() {
       if (s[i][j] == 'S' || s[i][j] == 'a') {
         s[i][j] = 'a';
         d[i][j] = 0;
-        q.push(mp(i, j));				
+        q.push(mp(i, j));
       }
     }
   while (!q.empty()) {

@@ -106,10 +106,10 @@ int main() {
           }
         }
         if (!was) {
-          nxt[mp(i, j)].pb(mp(i, j));	
+          nxt[mp(i, j)].pb(mp(i, j));
         }
       }
-    }	
+    }
     forn (i, n)
       forn (j, m)
         a[i][j] = '.';
@@ -120,7 +120,7 @@ int main() {
       } else {
         a[cell.fst][cell.snd] = '#';
       }
-    }		
+    }
     nxt.clear();
   }
   int sum = 0, minX = n, maxX = -1, minY = m, maxY = -1;

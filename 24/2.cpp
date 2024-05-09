@@ -84,7 +84,7 @@ int main() {
       int nx = pos.fst + TURN[dir][0], ny = pos.snd + TURN[dir][1];
       nx = norm(nx - 1, n - 2) + 1;
       ny = norm(ny - 1, m - 2) + 1;
-      nextPoss.insert(mp(mp(nx, ny), dir));	
+      nextPoss.insert(mp(mp(nx, ny), dir));
     }
     for (auto& [x, y] : ts) {
       forn (g, 5) {
@@ -96,7 +96,7 @@ int main() {
           if (it != nextPoss.end() && it->fst == mp(nx, ny))
             continue;
           nextTs.insert(mp(nx, ny));
-        }		
+        }
       }
     }
     poss = nextPoss;

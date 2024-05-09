@@ -110,10 +110,10 @@ int main() {
           }
         }
         if (!was) {
-          nxt[mp(i, j)].pb(mp(i, j));	
+          nxt[mp(i, j)].pb(mp(i, j));
         }
       }
-    }	
+    }
     auto oldA = a;
     forn (i, n)
       forn (j, m)
@@ -125,7 +125,7 @@ int main() {
       } else {
         a[cell.fst][cell.snd] = '#';
       }
-    }		
+    }
     nxt.clear();
     if (a == oldA) {
       cout << q + 1 << "\n";

@@ -51,11 +51,11 @@ pair<ll, bool> get(const string& s, map<string, pair<char, pair<string, string>>
   auto [op2, humn2] = get(deps[s].snd.snd, deps, go);
   char c = deps[s].first;
   if (c == '+')
-    op1 += op2;	 
+    op1 += op2; 
   if (c == '-')
-    op1 -= op2;	 
+    op1 -= op2; 
   if (c == '*')
-    op1 *= op2;	 
+    op1 *= op2; 
   if (c == '/')
     op1 /= op2;
   return go[s] = mp(op1, humn1 || humn2);

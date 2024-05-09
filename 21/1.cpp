@@ -50,11 +50,11 @@ ll get(const string& s, map<string, pair<char, pair<string, string>>>& deps, map
   ll op1 = get(deps[s].snd.fst, deps, go), op2 = get(deps[s].snd.snd, deps, go);
   char c = deps[s].first;
   if (c == '+')
-    op1 += op2;	 
+    op1 += op2; 
   if (c == '-')
-    op1 -= op2;	 
+    op1 -= op2; 
   if (c == '*')
-    op1 *= op2;	 
+    op1 *= op2; 
   if (c == '/')
     op1 /= op2;
   return go[s] = op1;

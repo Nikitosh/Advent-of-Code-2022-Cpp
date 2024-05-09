@@ -39,7 +39,7 @@ int main() {
   forn (i, sz(s) - (LEN - 1)) {
     if (sz(set<char>(s.begin() + i, s.begin() + i + LEN)) == LEN) {
       cout << i + LEN << "\n";
-      break;		
+      break;
     }
   }
   

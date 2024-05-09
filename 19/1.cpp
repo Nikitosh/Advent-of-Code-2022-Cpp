@@ -71,7 +71,7 @@ void go(int k, vi cnts, vi robots, const vector<vi>& costs, int n, int& maxx) {
     }
     forn (j, 4)
       newCnts[j] += robots[j];
-    go(k + 1, newCnts, newRobots, costs, n, maxx);	
+    go(k + 1, newCnts, newRobots, costs, n, maxx);
     if (i >= 2)
       break;
   }
@@ -93,8 +93,8 @@ int main() {
     vector<vi> costs = {{v[1]}, {v[2]}, {v[3], v[4]}, {v[5], 0, v[6]}};
     was.clear();
     int maxx = 0;
-    go(0, {0, 0, 0, 0}, {1, 0, 0, 0}, costs, 24, maxx);	
-    ans += v[0] * maxx;	
+    go(0, {0, 0, 0, 0}, {1, 0, 0, 0}, costs, 24, maxx);
+    ans += v[0] * maxx;
   }
   cout << ans << "\n";
 
